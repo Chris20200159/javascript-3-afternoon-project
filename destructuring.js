@@ -20,11 +20,12 @@ var carDetails = {
 /*
   Use object destructuring to save the property values from the object carDetails into new variables. 
 */
+let carDetailsColor = carDetails.color;
+let carDetailsMake = carDetails.make;
+let carDetailsModel = carDetails.model;
+let carDetailsYear = carDetails.year;
 
-//Code Here
-
-
-
+let {color, make, model, year} = carDetails;
 ////////// PROBLEM 2 //////////
 
 /*
@@ -33,9 +34,9 @@ var carDetails = {
   The property names are firstName, lastName, and title.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
+function greeting(obj) {
+  const { firstName, lastName, title } = obj
+
   // Do not edit the code below.
   return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
   // Do not edit the code above.
@@ -53,9 +54,15 @@ function greeting( obj ) {
   Sum up the values and return the total number.
 */
 
-//Code Here
-
-
+function totalPopulation(states) {
+  const {
+  utah, 
+  california,
+  texas,
+  arizona
+  } = states
+  return utah + california + texas + arizona
+}
 
 ////////// PROBLEM 4 //////////
 
@@ -67,7 +74,15 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+
+function ingredients(obj){
+  let health =[]
+  const {carb, fat, protein} = obj;
+  health.push(carb);
+  health.push(fat);
+  health.push(protein);
+  return health
+}
 
 
 
@@ -86,7 +101,13 @@ function greeting( obj ) {
 */
 
 //Code Here
+function largeNumbers(){
+  const {first, second, third} = obj
+}
 
+// function largeNumbers({first, second, third}){
+
+// }
 
 
 ////////// PROBLEM 6 //////////
@@ -98,5 +119,14 @@ function greeting( obj ) {
 */
 
 //Code Here
-
+function numberGroups({a,b,c}){
+  let theLongest = []
+  if (a.length > b.length){theLongest = a}
+  else {theLongest = b}
+  if (theLongest.length > c.length){
+    return theLongest
+  } else {
+    return c
+  }
+} 
 
